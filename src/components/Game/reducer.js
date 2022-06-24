@@ -3,7 +3,7 @@ import {
 	SET_QUESTIONS,
 	// SET_TRUE_ANSWER,
 	// SET_FALSE_ANSWER,
-	SET_CORRECT,
+	SET_ANSWER,
 	CLEAR_ANSWERS,
 } from './actionTypes'
 
@@ -17,6 +17,8 @@ export default function (state = initialState, action) {
 	switch (action.type) {
 		case SET_QUESTIONS: {
 			const { questions } = action.payload
+			// console.log(questions)
+
 			return {
 				...state,
 				questions,
@@ -44,10 +46,10 @@ export default function (state = initialState, action) {
 				answers: {},
 			}
 		}
-		case SET_CORRECT: {
-			const { id } = action.payload
-			const newAnswers = { ...state.answers, [id]: true }
-			// console.log(newAnswers)
+		case SET_ANSWER: {
+			const { id, answ } = action.payload
+			const newAnswers = { ...state.answers, [id]: answ }
+			console.log(newAnswers)
 
 			// newAnswers[id] = true
 			return {

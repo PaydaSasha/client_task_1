@@ -8,12 +8,16 @@ export default function StartPage() {
 	return (
 		<>
 			<div className={styles.container}>
-				<p>Welcome to the Trivia Challenge!</p>
-				<h1 className={styles.title}>
+				<h1 className={styles.geetingMsg}>Welcome to the Trivia Challenge!</h1>
+				<h2 className={styles.title}>
 					You will be presented with 10 true or false questions
-				</h1>
-				<p>Can you score 100%</p>
-				<Link to='/game' onClick={() => dispatch(startGame())}>
+				</h2>
+				<h3 className={styles.canScore}>Can you score 100%</h3>
+				<Link
+					className={styles.beginButton}
+					to='/game'
+					onClick={() => dispatch(startGame())}
+				>
 					BEGIN
 				</Link>
 			</div>

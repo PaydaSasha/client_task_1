@@ -2,7 +2,7 @@ import {
 	SET_QUESTIONS,
 	// SET_TRUE_ANSWER,
 	// SET_FALSE_ANSWER,
-	SET_CORRECT,
+	SET_ANSWER,
 	CLEAR_ANSWERS,
 } from './actionTypes'
 
@@ -25,10 +25,11 @@ export const setQuestions = (questions) => ({
 // 		id,
 // 	},
 // })
-export const setCorrect = (id) => ({
-	type: SET_CORRECT,
+export const setAnswer = (id, answ) => ({
+	type: SET_ANSWER,
 	payload: {
 		id,
+		answ,
 	},
 })
 export const clearAnswers = () => ({
